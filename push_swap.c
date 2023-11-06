@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:05:29 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/06 11:13:11 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:18:41 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@
 // printf
 #include <stdio.h>
 #include <string.h>
+#include "push_swap.h"
+
 // lets check the input
+
 
 // argc > 2 means the arguments are multiple chars
     // atoi
@@ -106,15 +109,19 @@ int	is_sorted(char **arg)
 
 
 //___________________________________________________________________________
-
-
+//&a, argv + 1
+int	init_stack_a()
+{
+	
+}
 
 
 
 int main(int argc, char **argv)
 {
-    int i;
-    //int number;
+	int		i;
+	t_stack	*a;
+	t_stack	*b;
 
     i = 1;
     if (argc < 2)
@@ -136,6 +143,9 @@ int main(int argc, char **argv)
         }
         check_for_dup(argv);
 		is_sorted(argv);
+		// init stack a
+		// +1 to start from the second element of the command line argument
+		init_stack_a(&a, argv + 1);
     }
 
     /*jamie says i dont need this?!

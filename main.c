@@ -6,6 +6,8 @@
  // exit
  #include <stdlib.h>
 
+#include "push_swap.h"
+
 // check if sorted already
 // check if int
 // check if too big
