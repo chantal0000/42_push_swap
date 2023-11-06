@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:05:29 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/06 10:05:33 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/06 11:13:11 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,15 @@ int check_for_dup(char **arg)
                     return (0);
                 }
                 else
+					//printf("i: %d\n", i);
+					//printf("j: %d\n", j);
                     j++;
             }
         i++;
     }
-    printf("%s\n", arg[1]);
+    //printf("%s\n", arg[1]);
     return (0);
 }
-
-
 //___________________________________________________________________________________________________________
 
 
@@ -81,7 +81,34 @@ int is_int(char *arg)
     return (0);
 }
 
+//check if already sorted___________________________________________________________________________
+
+int	is_sorted(char **arg)
+{
+	int	i;
+
+	i = 0;
+	while (arg[i] && arg[i + 1])
+	{
+		// NOT ALLOWED FUNCTION
+		// meaning its not sorted
+		if (strcmp(arg[i], arg[i + 1]) > 0)
+// stop here how??
+			exit (1);
+			// meaning its sorted
+		else
+			i++;
+			printf("arg[i]: %s\n", arg[i]);
+			printf("i: %d\n", i);
+	}
+	return (0);
+}
+
+
 //___________________________________________________________________________
+
+
+
 
 
 int main(int argc, char **argv)
@@ -108,6 +135,7 @@ int main(int argc, char **argv)
             i++;
         }
         check_for_dup(argv);
+		is_sorted(argv);
     }
 
     /*jamie says i dont need this?!
@@ -126,11 +154,6 @@ int main(int argc, char **argv)
 
 
 
-// check for duplicates
-int is_dup(int number)
-{
-
-}
 
 
 // jamie says I dont need this??________________________________________________________________

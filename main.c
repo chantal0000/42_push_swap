@@ -77,7 +77,7 @@ int ft_push_swap(int argc, char **argv)
         if(ft_check_int() == 0)
         {
             write(1, "Error\n", 6);
-            exit ;
+            exit (1);
         }
         // check if too big
         // check if sorted already??
