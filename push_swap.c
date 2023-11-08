@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:05:29 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/06 17:18:41 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:56:10 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int check_for_dup(char **arg)
                     return (0);
                 }
                 else
-					//printf("i: %d\n", i);
-					//printf("j: %d\n", j);
+					// printf("i: %d\n", i);
+					// printf("j: %d\n", j);
                     j++;
             }
         i++;
@@ -112,7 +112,7 @@ int	is_sorted(char **arg)
 //&a, argv + 1
 int	init_stack_a()
 {
-	
+
 }
 
 
