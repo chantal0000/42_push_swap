@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:05:29 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/07 14:56:10 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/08 13:03:41 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,9 @@ int	is_sorted(char **arg)
 		// meaning its not sorted
 		if (strcmp(arg[i], arg[i + 1]) > 0)
 // stop here how??
-			exit (1);
+// not exit cause than we exit the whole program
+			//exit (1);
+			return (1);
 			// meaning its sorted
 		else
 			i++;
@@ -123,6 +125,8 @@ int main(int argc, char **argv)
 	t_stack	*a;
 	t_stack	*b;
 
+	a = NULL;
+	b = NULL;
     i = 1;
     if (argc < 2)
     {
@@ -142,10 +146,11 @@ int main(int argc, char **argv)
             i++;
         }
         check_for_dup(argv);
-		is_sorted(argv);
+		if (is_sorted(argv) == 0)
+			write(1, "Error: is sorted", 17);
 		// init stack a
 		// +1 to start from the second element of the command line argument
-		init_stack_a(&a, argv + 1);
+		//init_stack_a(&a, argv + 1);
     }
 
     /*jamie says i dont need this?!
