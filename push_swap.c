@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:05:29 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/08 13:03:41 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/09 10:15:11 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 
 // lets check the input
 
+void insert_end(t_stack **head, int value);
+void display(t_stack *head);
 
 // argc > 2 means the arguments are multiple chars
     // atoi
@@ -112,10 +114,11 @@ int	is_sorted(char **arg)
 
 //___________________________________________________________________________
 //&a, argv + 1
+/*
 int	init_stack_a()
 {
 
-}
+}*/
 
 
 
@@ -124,10 +127,14 @@ int main(int argc, char **argv)
 	int		i;
 	t_stack	*a;
 	t_stack	*b;
+	t_stack *head;
+	int value;
 
 	a = NULL;
 	b = NULL;
+	head = NULL;
     i = 1;
+	value = 0;
     if (argc < 2)
     {
         write(1, "Error\n", 6);
@@ -152,6 +159,14 @@ int main(int argc, char **argv)
 		// +1 to start from the second element of the command line argument
 		//init_stack_a(&a, argv + 1);
     }
+	i = 1;
+	while(i < argc)
+	{
+		value = atoi(argv[i]);
+		insert_end(&head, value);
+		i++;
+	}
+	display(head);
 
     /*jamie says i dont need this?!
     Théo gaslights but is wrong

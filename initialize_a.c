@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:55:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/09 10:08:08 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/09 10:17:39 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_stack *create_node(int value)
 {
 	t_stack *new_node = malloc(sizeof (t_stack));
 	if (!new_node)
-		return ;
+		return (NULL);
 	new_node->value = value;
 	new_node->prev = NULL;
 	new_node->next = NULL;
@@ -51,7 +51,7 @@ void insert_end(t_stack **head, int value)
 	if (*head == NULL)
 	{
 		*head = new_node;
-		return;
+		return ;
 	}
 	t_stack *temp = *head;
 	while (temp->next != NULL)
@@ -74,7 +74,7 @@ void display(t_stack *head)
 	printf("\n");
 }
 
-
+/*
 int main(int argc, char **argv)
 {
 	t_stack *head = NULL;
@@ -91,7 +91,7 @@ int main(int argc, char **argv)
 	}
 	display(head);
 	return (0);
-}
+}*/
 
 
 
