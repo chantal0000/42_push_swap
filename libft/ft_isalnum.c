@@ -1,13 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 10:05:29 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/10 10:01:12 by chbuerge         ###   ########.fr       */
+/*   Created: 2023/05/03 16:19:32 by chbuerge          #+#    #+#             */
+/*   Updated: 2023/05/10 13:44:46 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
+
+int	ft_isalnum(int c)
+{
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'))
+	{
+		return (1);
+	}	
+	return (0);
+}
+/*
+int main()
+{
+	int c = '8';
+	printf("%d\n", ft_isalnum(c));
+	printf("%d", isalnum(c));
+}*/

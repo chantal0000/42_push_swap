@@ -1,35 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initialize_a.c                                     :+:      :+:    :+:   */
+/*   nodes.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:55:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/09 10:17:39 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/10 10:01:58 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// atoi
-#include <stdlib.h>
-// write
-#include <unistd.h>
-// printf
-#include <stdio.h>
-#include <string.h>
 #include "push_swap.h"
-//____________________test__________________________
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-typedef struct s_stack
-{
-	int	value;
-	struct s_stack *next;
-	struct s_stack *prev;
-} t_stack;
-#endif
-//____________________________________________________
 
 // creating a new node
 t_stack *create_node(int value)

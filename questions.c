@@ -10,3 +10,7 @@
 // ich checked for errors using arrays but now how do i
 // create the stack?
 
+//______to do:
+// 10.11
+	// create your own strcmp function or change to strncmp from your libft
+	// check for max int and min int

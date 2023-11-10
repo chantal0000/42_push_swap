@@ -1,13 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
+/*   By: chbuerge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 10:05:29 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/10 10:01:12 by chbuerge         ###   ########.fr       */
+/*   Created: 2023/05/15 16:05:31 by chbuerge          #+#    #+#             */
+/*   Updated: 2023/05/15 16:22:48 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
+{
+	char	*ptr;
+
+	ptr = 0;
+	while (*s)
+	{
+		if (*s == (char)c)
+			ptr = (char *)s;
+		s++;
+	}
+	if (!(char)c)
+		return ((char *)s);
+	return (ptr);
+}
