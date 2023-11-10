@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:14:50 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/10 10:00:04 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/10 10:23:05 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 			i = 1;
 			while(i < argc)
 			{
-				value = atoi(argv[i]);
+				value = ft_atoi(argv[i]);
 				insert_end(&a, value);
 				i++;
 			}

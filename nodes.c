@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:55:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/10 10:01:58 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/10 10:18:59 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ t_stack *create_node(int value)
 }
 
 // insert at the end of the list
-
 void insert_end(t_stack **head, int value)
 {
 	t_stack *new_node = create_node(value);
