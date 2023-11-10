@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:14:50 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/10 10:23:05 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/10 10:28:06 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	handle_error()
 	exit(1);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int		i;
 	t_stack	*a;
@@ -54,18 +54,6 @@ int main(int argc, char **argv)
 			}
 			display(a);
 		}
-
-    }
-
-
-    /*jamie says i dont need this?!
-    Théo gaslights but is wrong
-    else if (argc == 2)
-        while (argv[i])
-        {
-            is_int_string(argv[i]);
-            i++;
-        }
-    */
-    return (0);
+	}
+	return (0);
 }
