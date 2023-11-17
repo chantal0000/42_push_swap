@@ -6,11 +6,44 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:55:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/17 10:58:51 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:09:43 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// need a function to find the smallest and biggest node
+int	largest_element(t_stack *head)
+{
+	int max;
+
+	max = INT_MIN;
+	while(head)
+	{
+		// if the value in node is bigger than max
+		if (max < head->value)
+			// make it the new max
+			max = head->value;
+		// move to next node
+		head = head->next;
+	}
+	return (max);
+}
+
+int	smallest_element(t_stack *head)
+{
+	int min;
+
+	min = INT_MAX;
+	while (head)
+	{
+		if (min > head->value)
+			min = head->value;
+		head = head->next;
+	}
+	return (min);
+}
+
 
 // calculate and return the length of my stack
 // stack is a pointer to the first node of the linked list
