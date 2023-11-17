@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:44:49 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/17 18:12:40 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/17 19:27:43 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,24 @@ void	rotate(t_stack **head)
 	// the new top nodes prev pointer points now to NULL
 	(*head)->prev = NULL;
 	printf("final_node: %d\n", final_node->value);
+}
+
+void	ra(t_stack *a)
+{
+	rotate(a);
+	write(1, "ra\n", 3);
+}
+
+void	rb(t_stack *b)
+{
+	rotate(b);
+	write(1, "rb\n", 3);
+}
+
+void	rr(t_stack *a, t_stack *b)
+{
+	rotate(a);
+	rotate(b);
+	write(1, "rr\n", 3);
 }
 

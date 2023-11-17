@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:05:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/17 18:12:27 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/17 19:08:15 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
 
 void	rotate(t_stack **head);
-
+void	reverse_rotate(t_stack **head);
 void	sort_three(t_stack **a);
 
 #endif

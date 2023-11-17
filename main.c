@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:14:50 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/17 18:12:31 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/17 19:09:03 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	main(int argc, char **argv)
 			// if stack_len(a) == 3
 			// else ...
 			//swap(&a);
-			rotate(&a);
+			reverse_rotate(&a);
 			display(a);
 			// delete later
 			t_stack *largest_node = largest_element(a);
