@@ -6,42 +6,54 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:55:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/17 12:09:43 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:32:17 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // need a function to find the smallest and biggest node
-int	largest_element(t_stack *head)
+t_stack	*largest_element(t_stack *head)
 {
-	int max;
+	long	max;
+	t_stack *largest_node;
 
+	if (!head)
+		return (NULL);
 	max = INT_MIN;
 	while(head)
 	{
 		// if the value in node is bigger than max
 		if (max < head->value)
+		{
 			// make it the new max
 			max = head->value;
+			largest_node = head;
+		}
 		// move to next node
 		head = head->next;
 	}
-	return (max);
+	return (largest_node);
 }
 
-int	smallest_element(t_stack *head)
+t_stack	*smallest_element(t_stack *head)
 {
 	int min;
+	t_stack	*smallest_node;
 
+	if (!head)
+		return (NULL);
 	min = INT_MAX;
 	while (head)
 	{
 		if (min > head->value)
+		{
 			min = head->value;
+			smallest_node = head;
+		}
 		head = head->next;
 	}
-	return (min);
+	return (smallest_node);
 }
 
 
