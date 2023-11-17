@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:05:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/10 10:07:54 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/17 18:12:27 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,20 @@ void display(t_stack *head);
 t_stack *create_node(int value);
 void insert_end(t_stack **head, int value);
 void display(t_stack *head);
+int	stack_len(t_stack *stack);
+t_stack	*largest_element(t_stack *head);
+t_stack	*smallest_element(t_stack *head);
+t_stack	*last_node(t_stack *head);
 
+
+// operations
+// swap
+void	swap(t_stack **head);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
+
+void	rotate(t_stack **head);
+
+void	sort_three(t_stack **a);
 
 #endif

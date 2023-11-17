@@ -4,6 +4,7 @@
 typedef struct s_node {
 	int value;
 	struct s_node *next;
+	struct s_node *prev;
 } t_node;
 
 void print_list(t_node *head)
@@ -17,6 +18,26 @@ void print_list(t_node *head)
 	}
 	printf("\n");
 }
+/*does not work? infinate loop
+// rotate elements up by one
+void	rotate(t_node **stack)
+{
+	t_node *last = *stack;
+	if (*stack == NULL || (*stack)->next == NULL)
+		return;
+	while(last->next != NULL)
+	{
+		last = last->next;
+	}
+	last->next = *stack;
+	//(*stack)->prev = last;
+	*stack = (*stack)->next;
+	if (*stack != NULL)
+	{
+	(*stack)->prev = NULL;
+	}
+}
+*/
 
 // function that creates new nodes for us
 
@@ -52,7 +73,7 @@ int main()
 	tmp->next = head;
 	head = tmp;
 	*/
-	while (i < 12)
+	while (i < 5)
 	{
 		// create a new node with the value of 'i'
 		tmp = create_new_node(i);
@@ -63,6 +84,7 @@ int main()
 		i++;
 	}
 	// prints the entire linked list starting from te head
+	//rotate(&head);
 	print_list(head);
 	return (0);
 }

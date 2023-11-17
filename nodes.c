@@ -6,11 +6,23 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:55:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/17 12:32:17 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/17 17:29:03 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// function that finds the last node in my list
+
+t_stack	*last_node(t_stack *head)
+{
+	if (!head)
+		return (NULL);
+	while(head->next != NULL)
+		head = head->next;
+	return (head);
+}
+
 
 // need a function to find the smallest and biggest node
 t_stack	*largest_element(t_stack *head)

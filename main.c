@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:14:50 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/10 10:28:06 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/17 18:12:31 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	main(int argc, char **argv)
 	value = 0;
 	if (argc < 2)
 		handle_error();
+	// what if its == 2??? string...
 	else if (argc > 2)
 	{
 		while (argv[i])
@@ -49,11 +50,26 @@ int	main(int argc, char **argv)
 			while(i < argc)
 			{
 				value = ft_atoi(argv[i]);
+				// initilizes stack a
 				insert_end(&a, value);
 				i++;
 			}
+			//rotate(&a);
+			//if (stack_len(a) == 2)
+				// swap the two
+			// if stack_len(a) == 3
+			// else ...
+			//swap(&a);
+			rotate(&a);
 			display(a);
+			// delete later
+			t_stack *largest_node = largest_element(a);
+			printf("largest element: %d\n", largest_node->value);
+			t_stack *smallest_node = smallest_element(a);
+			printf("smallest element: %d\n", smallest_node->value);
+
 		}
 	}
+	// free_stack
 	return (0);
 }

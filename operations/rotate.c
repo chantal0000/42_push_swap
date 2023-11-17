@@ -1,0 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/17 16:44:49 by chbuerge          #+#    #+#             */
+/*   Updated: 2023/11/17 18:12:40 by chbuerge         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../push_swap.h"
+
+// is actually reverse_rotate? NOOOOOOO???!
+void	rotate(t_stack **head)
+{
+	t_stack	*final_node;
+	//find the last node in the list
+	final_node = last_node(*head);
+	// the next node after final_node should be the current top one
+	final_node->next = *head;
+	//update top node to be the next node in the list (former second node)
+	*head = (*head)->next;
+	// the next node after the original final_node is now the old top node
+	// therefore the next pointer points to NULL
+	final_node->next->next = NULL;
+	// the new top nodes prev pointer points now to NULL
+	(*head)->prev = NULL;
+	printf("final_node: %d\n", final_node->value);
+}
+
