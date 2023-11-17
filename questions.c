@@ -24,3 +24,5 @@
 	// largest and smallest nodes are in function but I need tstack? DONE
 	// swap function **head and not *head??
 
+// PROBLEM 17.11 when trying to use the sort three function all warnings, without it
+// and individually the functions work fine?!

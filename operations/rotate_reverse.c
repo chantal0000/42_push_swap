@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:57:55 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/17 19:27:22 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/17 19:39:59 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,19 @@ void	reverse_rotate(t_stack **head)
 	printf("final_node: %d\n", final_node->value);
 }
 
-void	rra(t_stack *a)
+void	rra(t_stack **a)
 {
 	reverse_rotate(a);
 	write(1, "rra\n", 4);
 }
 
-void	rrb(t_stack *b)
+void	rrb(t_stack **b)
 {
 	reverse_rotate(b);
 	write(1, "rrb\n", 4);
 }
 
-void	rrr(t_stack *a, t_stack *b)
+void	rrr(t_stack **a, t_stack **b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);

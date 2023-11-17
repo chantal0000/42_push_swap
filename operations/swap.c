@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 10:51:39 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/17 16:30:32 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/17 19:35:10 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 // 1. swap - swap the first element with the second element of a stack
 	// sa, sb, ss (swap of two stacks)

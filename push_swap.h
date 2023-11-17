@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:05:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/17 19:08:15 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/17 19:42:44 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,22 @@ t_stack	*last_node(t_stack *head);
 // operations
 // swap
 void	swap(t_stack **head);
+void	sa(t_stack **a);
 void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
 
+// rotate
 void	rotate(t_stack **head);
+void	ra(t_stack **a);
+void	rb(t_stack **b);
+void	rr(t_stack **a, t_stack **b);
+
+// reverse_rotate
 void	reverse_rotate(t_stack **head);
+void	rra(t_stack **a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
+
 void	sort_three(t_stack **a);
 
 #endif
