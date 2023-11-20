@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 09:58:42 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/20 10:07:41 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/20 10:12:36 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,3 +46,18 @@ void push(t_stack **source, t_stack **destination)
 // make the node to be pushed the new *dst
 	*destination = node_to_be_pushed;
 }
+
+// pa - push the first element of b and put it on top of a
+void	pa(t_stack **a, t_stack **b)
+{
+	push(a, b);
+	write(1, "pa\n", 3);
+}
+
+// pb - push the first element of a and put it at the top of b
+void	pb(t_stack **b, t_stack **a)
+{
+	push(b, a);
+	write(1, "pb\n", 3);
+}
+
