@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:14:50 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/17 19:36:02 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:27:55 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ int	main(int argc, char **argv)
 		// +1 to start from the second element of the command line argument
 		//init_stack_a(&a, argv + 1);
 			i = 1;
+
+			// how does this work?
+			//if (argc == 2)
+			//	argv = ft_split(argv[1], ' ');
 			while(i < argc)
 			{
 				value = ft_atoi(argv[i]);
@@ -55,12 +59,14 @@ int	main(int argc, char **argv)
 				i++;
 			}
 			//rotate(&a);
-			//if (stack_len(a) == 2)
-				// swap the two
-			// if stack_len(a) == 3
-			// else ...
-			//swap(&a);
-			sort_three(&a);
+			if (stack_len(a) == 2)
+				sa(&a);
+			else if (stack_len(a) == 3)
+				sort_three(&a);
+			//else
+				//sort_stacks(&a, &b); sorting everything
+			//push(&a,&b);
+			//push(&a,&b);
 			display(a);
 			// delete later
 			t_stack *largest_node = largest_element(a);

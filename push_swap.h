@@ -6,12 +6,14 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:05:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/17 19:42:44 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/20 11:56:35 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+// boolean function
+#include <stdbool.h>
 // write
 #include <unistd.h>
  // printf
@@ -29,10 +31,16 @@
 // t_ for type
 typedef struct s_stack
 {
-	int	value;
-	int	i;
+	int				value;
+	int				i;
+	struct s_stack *target_node;
 	struct s_stack *next;
 	struct s_stack *prev;
+	int				push_cost;
+	bool			cheapest;
+	// change name?
+	bool			above_median;
+
 } t_stack;
 
 
@@ -72,6 +80,11 @@ void	reverse_rotate(t_stack **head);
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
+
+// push
+void	push(t_stack **source, t_stack **destination);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **b, t_stack **a);
 
 void	sort_three(t_stack **a);
 

@@ -26,3 +26,13 @@
 
 // PROBLEM 17.11 when trying to use the sort three function all warnings, without it
 // and individually the functions work fine?!
+
+// 20.11
+	// negative numbers? yes no? radix sort not for negative numbers
+	// how to use valgrind correctly
+	// if it is already sorted what should happen?
+	// how do I use the checker? checker permission denied - SOLVED "chmod +x <file>"
+	// you need to handle strings...
+
+// 21.11
+	// next step find the price of each move of the target_nodes
