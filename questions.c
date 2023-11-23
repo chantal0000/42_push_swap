@@ -36,3 +36,9 @@
 
 // 21.11
 	// next step find the price of each move of the target_nodes
+
+// 22.11
+	// why/when static functions?
+
+// 23.11
+	// node_index try to change ++i to i++
