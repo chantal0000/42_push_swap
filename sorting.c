@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:41:51 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/23 11:22:12 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/24 15:19:22 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@
 	// we rotate the stack
 // 5. last step bring min number to the top of the stack a, check if everything is sorted
 
-
+// ?????????? while (b)...
 void	sort_stacks(t_stack **a, t_stack **b)
 {
 	int	len_a;
 
 	len_a = stack_len(*a);
 	// if a is > 3 push one element to be
-	if (len_a - 1 > 3 && is_sorted(*a) == 1)
+	if (len_a-- > 3 && is_sorted(*a) == 1)
 		pb(b, a);
 	// else if (if a is still bigger) push another one
-	if (len_a - 1 > 3 && is_sorted(*a) == 1)
+	if (len_a-- > 3 && is_sorted(*a) == 1)
 		pb(b, a);
 	while (len_a - 1 > 3 && is_sorted(*a) == 1)
 	{
@@ -78,50 +78,35 @@ void	node_index(t_stack *stack)
 		++i;
 	}
 }
-//
-
-// find the target node, a function that finds the smallest biggr
-// node in stack a for every element in stack b, if there is none
-// the target node is the smallest node
-void	find_target_node(t_stack *a, t_stack *b)
+// a function to find target nodes in stack b for every element in stack a
+// biggest smallest, if there is none than biggest node
+void	find_target_node_for_a(t_stack *a, t_stack *b)
 {
-	// traverse/ durchqueren stack a
-	t_stack	*current_a;
-	// keep track of the node in a that is best match for the current node in b
+	t_stack	*current_b;
 	t_stack	*target_node;
-	// var to store the index of best match found in stack
 	long	best_match_index;
-	// iterate through each node in stack b
-	while (b)
+
+	while(a)
 	{
-		best_match_index = LONG_MAX;
-		current_a = a;
-		// wir gehen durch a nodes
-		while (current_a)
+		best_match_index = LONG_MIN;
+		current_b = b;
+		while (current_b)
 		{
-			// falls das value von a groesser ist als value von b
-			// UND value von a kleiner ist als best_match_index (LONG MAX)
-			if (current_a->value > b->value && current_a->value < best_match_index)
+			if (current_b->value > a->value && current_b->value > best_match_index)
 			{
-				// wir haben ein match gefunden
-				best_match_index = current_a->value;
-				// node in a wird target node
-				target_node = current_a;
+				best_match_index = current_b->value;
+				target_node = current_b;
 			}
-			// wir gehen zum naechsten node um zu sehen ob es besser passt
-			current_a = current_a->next;
+			current_b = current_b->next;
 		}
-		// wir haben kein match gefunden? heisst es gibt kein bigger node,
-		// dann ist das kleinste node ein match
-		if (LONG_MAX == best_match_index)
-			b->target_node = smallest_element(a);
+		if (LONG_MIN == best_match_index)
+			a->target_node = largest_element(b);
 		else
-			// wir haben match, b target node ist die gefundene target node
-			b->target_node = target_node;
-		// wir suchen target node fuer den nachsten node in b
-		b = b->next;
+			a->target_node = target_node;
+		a = a->next;
 	}
 }
+
 
 // median oder zentralwert -> der Wert der genau in der Mitte einer
 // Datenverteilung liegt
@@ -184,7 +169,7 @@ void	find_cheapest(t_stack *b)
 }
 
 
-void	set_data(t_stack *a, t_stack *b)
+void	set_data_a(t_stack *a, t_stack *b)
 {
 	node_index(a);
 	node_index(b);

@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:41:17 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/10 09:57:43 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:16:15 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ int check_for_dup(char **arg)
 }
 
 //check if already sorted___________________________________________________________________________
+// !!!! rewrite this with linkedlist
+
 
 int	is_sorted(char **arg)
 {

@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:14:50 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/20 16:27:55 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/24 15:18:45 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,9 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		handle_error();
 	// what if its == 2??? string...
-	else if (argc > 2)
-	{
+	// problem with this??
+	// if (argc == 2)
+		// argv = ft_split(argv[1], ' ');
 		while (argv[i])
 		{
 			is_int(argv[i]);
@@ -68,6 +69,7 @@ int	main(int argc, char **argv)
 			//push(&a,&b);
 			//push(&a,&b);
 			display(a);
+			//display(b);
 			// delete later
 			t_stack *largest_node = largest_element(a);
 			printf("largest element: %d\n", largest_node->value);
@@ -75,7 +77,6 @@ int	main(int argc, char **argv)
 			printf("smallest element: %d\n", smallest_node->value);
 
 		}
-	}
 	// free_stack
 	return (0);
 }

@@ -42,3 +42,7 @@
 
 // 23.11
 	// node_index try to change ++i to i++
+
+// 24.11
+	// learn gdp? debugging
+	// rewrite is_sorted as a linked list
