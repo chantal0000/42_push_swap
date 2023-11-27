@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:05:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/23 11:17:16 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/25 15:38:39 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ typedef struct s_stack
 	struct s_stack *next;
 	struct s_stack *prev;
 	int				operations_cost;
-	// change name?
 	bool			above_median;
 	bool			cheapest;
 
@@ -94,7 +93,12 @@ void	node_index(t_stack *stack);
 void	find_target_node(t_stack *a, t_stack *b);
 void	operation_cost(t_stack *a, t_stack *b);
 void	find_cheapest(t_stack *b);
-void	set_data(t_stack *a, t_stack *b);
+void	set_data_a(t_stack *a, t_stack *b);
+
+void	prepare_and_push_cheapest_a_to_b(t_stack **a, t_stack **b);
+
+t_stack	*get_cheapest(t_stack *stack);
 
 
+void print_stack(t_stack *stack, const char *stack_name);
 #endif

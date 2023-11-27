@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:14:50 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/24 15:18:45 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/27 11:27:24 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 	b = NULL;
 	i = 1;
 	value = 0;
+	/*
 	if (argc < 2)
 		handle_error();
 	// what if its == 2??? string...
@@ -52,6 +53,7 @@ int	main(int argc, char **argv)
 			// how does this work?
 			//if (argc == 2)
 			//	argv = ft_split(argv[1], ' ');
+			*/
 			while(i < argc)
 			{
 				value = ft_atoi(argv[i]);
@@ -64,19 +66,26 @@ int	main(int argc, char **argv)
 				sa(&a);
 			else if (stack_len(a) == 3)
 				sort_three(&a);
-			//else
-				//sort_stacks(&a, &b); sorting everything
+			else
+				sort_stacks(&a, &b);
 			//push(&a,&b);
+			//pb(&a, &b);
 			//push(&a,&b);
 			display(a);
+			//printf("hi\n");
+			//printf("stack b value: %d\n", b->value);
+			//pb(&a, &b);
+			//display(a);
+			//printf("stack b value after [0]: %d\n", b->value);
+			//printf("stack b value after [1]: %d\n", b->next->value);
 			//display(b);
 			// delete later
-			t_stack *largest_node = largest_element(a);
-			printf("largest element: %d\n", largest_node->value);
-			t_stack *smallest_node = smallest_element(a);
-			printf("smallest element: %d\n", smallest_node->value);
+			//t_stack *largest_node = largest_element(a);
+			//printf("largest element: %d\n", largest_node->value);
+			//t_stack *smallest_node = smallest_element(a);
+			//printf("smallest element: %d\n", smallest_node->value);
 
-		}
+		//}
 	// free_stack
 	return (0);
 }

@@ -46,3 +46,10 @@
 // 24.11
 	// learn gdp? debugging
 	// rewrite is_sorted as a linked list
+
+// 25.11
+	// MEIN PROBLEM IST DAS ICH WENN ICH A ZU B PUSHE VIELLEICHT DSAS LETZTE NICHT ZU NULL SETZE?
+
+// 27.11
+	// when i push to stack b how do I create a proper list in b?
+	// Like how do I link up the nodes in stack b that are pushed

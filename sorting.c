@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:41:51 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/24 15:19:22 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:02:48 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 	// we rotate the stack
 // 5. last step bring min number to the top of the stack a, check if everything is sorted
 
+///// CHECK IF SORTED11111111
 // ?????????? while (b)...
 void	sort_stacks(t_stack **a, t_stack **b)
 {
@@ -27,24 +28,41 @@ void	sort_stacks(t_stack **a, t_stack **b)
 
 	len_a = stack_len(*a);
 	// if a is > 3 push one element to be
-	if (len_a-- > 3 && is_sorted(*a) == 1)
-		pb(b, a);
+	if (len_a-- > 3 )
+		pb(a, b);
 	// else if (if a is still bigger) push another one
-	if (len_a-- > 3 && is_sorted(*a) == 1)
-		pb(b, a);
-	while (len_a - 1 > 3 && is_sorted(*a) == 1)
+	if (len_a-- > 3 )
+		pb(a, b);
+	while (len_a-- > 3)
 	{
-		set_data(*a, *b);
-		// move a to b...
+		set_data_a(*a, *b);
+		// issues in this function
+		prepare_and_push_cheapest_a_to_b(a, b);
 	}
-	sort_three(a);
-	while (*b)
-	{
+	display(*b);
+	//sort_three(a);
+	//printf("sort_stacks function is running\n");
+	//while (*b)
+	//{
 		// code here...
-	}
+	//}*/
 	// ...
 	// move smallest to the top of a (final)
 }
+
+//////
+ void print_stack(t_stack *stack, const char *stack_name)
+ {
+    printf("Contents of stack %s: ", stack_name);
+    while (stack) {
+        printf("%d ", stack->value); // Assuming 'value' is the field holding the stack element value
+        stack = stack->next;
+    }
+    printf("\n");
+}
+
+//////
+
 // function to index nodes within a stack and catogarizes them in terms of
 // above or below median
 void	node_index(t_stack *stack)
@@ -57,7 +75,7 @@ void	node_index(t_stack *stack)
 	i = 0;
 	// check if stack is empty
 	if (!stack)
-		return (NULL);
+		return ;
 	// median is the length of the stack / 2
 	median = stack_len(stack) / 2;
 	// loop through the stack
@@ -100,11 +118,18 @@ void	find_target_node_for_a(t_stack *a, t_stack *b)
 			current_b = current_b->next;
 		}
 		if (LONG_MIN == best_match_index)
+		{
 			a->target_node = largest_element(b);
+			//printf("target node1: %d\n", a->target_node->value);
+		}
 		else
+		{
 			a->target_node = target_node;
+			//printf("target node2: %d\n", a->target_node->value);
+		}
 		a = a->next;
 	}
+	write(1, "find_target_node\n", 17);
 }
 
 
@@ -115,76 +140,80 @@ void	find_target_node_for_a(t_stack *a, t_stack *b)
 // the amount of operations it would take to put the target node and b on top
 void	operation_cost(t_stack *a, t_stack *b)
 {
+	//write(1, "operation_cost\n", 15);
 	// int for length of a and b
 	int	a_len;
 	int	b_len;
 	// fill len
 	a_len = stack_len(a);
 	b_len = stack_len(b);
+
 	// loop through b
-	while (b)
+	while (a)
 	{
 		// b price is = b index
-		b->operations_cost = b->i;
+		a->operations_cost = a->i;
 		// if b above median is false
-		if (!(b->above_median))
+		if (!(a->above_median))
+		{
 			// b price is = leb_b - index of b
-			b->operations_cost = b_len - b->i;
+			a->operations_cost = a_len - a->i;
+			write(1, "operation_cost1\n", 16);
+		}
 		// if b target node is above median
-		if (b->target_node->above_median)
-			// b price = b price + b->target_node->currennt_position
-			b->operations_cost = b->operations_cost + b->target_node->i;
+		if (a->target_node->above_median)
+		{// b price = b price + b->target_node->currennt_position
+			write(1, "operation_cost2\n", 16);
+			a->operations_cost = a->operations_cost + a->target_node->i;
+		}
 		// else meaning b is above median and its target node in a is below median
 		else
+		{
 			// price b = price b + len_a - (b->target?node->current_position)
-			b->operations_cost = b->operations_cost - (b->target_node->i);
-		b = b->next;
+			write(1, "operation_cost3\n", 16);
+			a->operations_cost = a->operations_cost - (a->target_node->i);
+		}
+		a = a->next;
 	}
 }
 // ????
-void	find_cheapest(t_stack *b)
+void	find_cheapest(t_stack *stack)
 {
 	long	best_match_value;
 	// to store the node with the cheapest push price
 	t_stack	*best_match_node;
 
-	if (!b)
-		return (NULL);
+	if (!stack)
+	{
+		printf("problem with stack\n");
+		return ;
+	}
 	best_match_value = LONG_MAX;
-	while (b)
+	while (stack)
 	{
 		//if bs operation costs are lower than best_match value
-		if (b->operations_cost < best_match_value)
+		if (stack->operations_cost < best_match_value)
 		{
 			// update best match value to bs costs
-			best_match_value = b->operations_cost;
+			best_match_value = stack->operations_cost;
 			// FOUND NEW cheapest, set it to best_match
-			best_match_node = b;
+			best_match_node = stack;
 		}
 		// move on to the next node
-		b = b->next;
+		stack = stack->next;
 	}
 	// set cheapest of the best_match_node to true
 	best_match_node->cheapest = true;
+	//printf("operation costs %d\n", best_match_node->operations_cost);
 }
 
-
+// filling the nodes with all necesssary information
 void	set_data_a(t_stack *a, t_stack *b)
 {
 	node_index(a);
 	node_index(b);
-	find_target_node(a, b);
+	find_target_node_for_a(a, b);
 	operation_cost(a, b);
-	find_cheapest(b);
+	find_cheapest(a);
+	write(1, "set_data_a\n", 11);
 }
-
-
-
-
-// checked in main.c
-// check if == 2
-	// swap numbers
-// check if 3
-	// sort_three
-// else
-	// sort, implement Turk Algorithm
