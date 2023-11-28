@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:41:51 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/27 13:02:48 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/28 18:25:31 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	sort_stacks(t_stack **a, t_stack **b)
 		// issues in this function
 		prepare_and_push_cheapest_a_to_b(a, b);
 	}
-	display(*b);
+	//display(*b);
 	//sort_three(a);
 	//printf("sort_stacks function is running\n");
 	//while (*b)
@@ -49,19 +49,6 @@ void	sort_stacks(t_stack **a, t_stack **b)
 	// ...
 	// move smallest to the top of a (final)
 }
-
-//////
- void print_stack(t_stack *stack, const char *stack_name)
- {
-    printf("Contents of stack %s: ", stack_name);
-    while (stack) {
-        printf("%d ", stack->value); // Assuming 'value' is the field holding the stack element value
-        stack = stack->next;
-    }
-    printf("\n");
-}
-
-//////
 
 // function to index nodes within a stack and catogarizes them in terms of
 // above or below median
@@ -110,7 +97,7 @@ void	find_target_node_for_a(t_stack *a, t_stack *b)
 		current_b = b;
 		while (current_b)
 		{
-			if (current_b->value > a->value && current_b->value > best_match_index)
+			if (current_b->value < a->value && current_b->value > best_match_index)
 			{
 				best_match_index = current_b->value;
 				target_node = current_b;
@@ -129,7 +116,6 @@ void	find_target_node_for_a(t_stack *a, t_stack *b)
 		}
 		a = a->next;
 	}
-	write(1, "find_target_node\n", 17);
 }
 
 
@@ -158,19 +144,16 @@ void	operation_cost(t_stack *a, t_stack *b)
 		{
 			// b price is = leb_b - index of b
 			a->operations_cost = a_len - a->i;
-			write(1, "operation_cost1\n", 16);
 		}
 		// if b target node is above median
 		if (a->target_node->above_median)
 		{// b price = b price + b->target_node->currennt_position
-			write(1, "operation_cost2\n", 16);
 			a->operations_cost = a->operations_cost + a->target_node->i;
 		}
 		// else meaning b is above median and its target node in a is below median
 		else
 		{
 			// price b = price b + len_a - (b->target?node->current_position)
-			write(1, "operation_cost3\n", 16);
 			a->operations_cost = a->operations_cost - (a->target_node->i);
 		}
 		a = a->next;
@@ -185,7 +168,6 @@ void	find_cheapest(t_stack *stack)
 
 	if (!stack)
 	{
-		printf("problem with stack\n");
 		return ;
 	}
 	best_match_value = LONG_MAX;
@@ -215,5 +197,4 @@ void	set_data_a(t_stack *a, t_stack *b)
 	find_target_node_for_a(a, b);
 	operation_cost(a, b);
 	find_cheapest(a);
-	write(1, "set_data_a\n", 11);
 }

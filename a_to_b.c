@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:39:23 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/27 13:07:37 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/28 15:44:16 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,9 @@ void	prepare_and_push_cheapest_a_to_b(t_stack **a, t_stack **b)
 	t_stack	*cheapest_node;
 	// cheapest node is function get_chepeast(*a)
 	cheapest_node = get_cheapest(*a);
-
+	printf("cheapest node: %d\n", cheapest_node->value);
+	printf("target_node of cheapest node: %d\n", cheapest_node->target_node->value);
+	display(*b);
 	if (cheapest_node->above_median && cheapest_node->target_node->above_median)
 	{// rotate_both(a, b, cheapest node)
 		rotate_both(a, b, cheapest_node);

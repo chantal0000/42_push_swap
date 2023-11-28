@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:14:50 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/27 11:27:24 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/11/28 15:53:04 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ int	main(int argc, char **argv)
 			//push(&a,&b);
 			//pb(&a, &b);
 			//push(&a,&b);
-			display(a);
+			//display(a);
+			display(b);
 			//printf("hi\n");
 			//printf("stack b value: %d\n", b->value);
 			//pb(&a, &b);

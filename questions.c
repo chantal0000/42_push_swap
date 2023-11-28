@@ -53,3 +53,7 @@
 // 27.11
 	// when i push to stack b how do I create a proper list in b?
 	// Like how do I link up the nodes in stack b that are pushed
+
+//28.11
+	// cant handle negative?
+	// - gives segmentation fault
