@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:05:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/25 15:38:39 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/01 12:40:04 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ typedef struct s_stack
 
 int	handle_error();
 // lets check the input
-int is_int(char *arg);
+int check_if_int(char **arg);
 int check_for_dup(char **arg);
-int	is_sorted(char **arg);
+int	check_if_sorted(char **arg);
 void insert_end(t_stack **head, int value);
 void display(t_stack *head);
 
@@ -99,6 +99,7 @@ void	prepare_and_push_cheapest_a_to_b(t_stack **a, t_stack **b);
 
 t_stack	*get_cheapest(t_stack *stack);
 
+void	set_data_b(t_stack *a, t_stack *b);
 
 void print_stack(t_stack *stack, const char *stack_name);
 #endif

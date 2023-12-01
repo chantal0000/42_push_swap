@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:41:51 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/28 18:25:31 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/01 12:41:12 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,18 @@ void	sort_stacks(t_stack **a, t_stack **b)
 		// issues in this function
 		prepare_and_push_cheapest_a_to_b(a, b);
 	}
-	//display(*b);
-	//sort_three(a);
-	//printf("sort_stacks function is running\n");
-	//while (*b)
-	//{
+	sort_three(a);
+
+	while (*b)
+	{
+		printf("we are in b\n");
+		set_data_b(*a, *b);
 		// code here...
-	//}*/
+		display(*b);
+		*b = (*b)->next;
+	}
+	display(*a);
+	// here you cant see b becuase of *b = (*b)->next;
 	// ...
 	// move smallest to the top of a (final)
 }

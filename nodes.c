@@ -6,14 +6,15 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:55:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/24 15:17:56 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/01 12:09:55 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// function that finds the last node in my list
 
+
+// function that finds the last node in my list
 t_stack	*last_node(t_stack *head)
 {
 	if (!head)

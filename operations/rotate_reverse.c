@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:57:55 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/17 19:39:59 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/01 12:31:07 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	reverse_rotate(t_stack **head)
 	// next of final_node is now the former top node, its prev should point to the new top node/ final_node
 	final_node->next->prev = final_node;
 
-	printf("final_node: %d\n", final_node->value);
+	//printf("final_node: %d\n", final_node->value);
 }
 
 void	rra(t_stack **a)

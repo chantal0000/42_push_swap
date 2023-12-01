@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:39:23 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/11/28 15:44:16 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/01 12:33:53 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,14 @@ void	move_to_top(t_stack **stack, t_stack *top_node, char stack_name)
 // move cheapest node from a to b until there is only 3 left in a
 void	prepare_and_push_cheapest_a_to_b(t_stack **a, t_stack **b)
 {
-	write(1, "prepare_and_push_cheapest_a_to_b\n", 50);
+	//write(1, "prepare_and_push_cheapest_a_to_b\n", 50);
 	// t_stack to track cheapest node
 	t_stack	*cheapest_node;
 	// cheapest node is function get_chepeast(*a)
 	cheapest_node = get_cheapest(*a);
-	printf("cheapest node: %d\n", cheapest_node->value);
-	printf("target_node of cheapest node: %d\n", cheapest_node->target_node->value);
-	display(*b);
+	//printf("cheapest node: %d\n", cheapest_node->value);
+	//printf("target_node of cheapest node: %d\n", cheapest_node->target_node->value);
+	//display(*b);
 	if (cheapest_node->above_median && cheapest_node->target_node->above_median)
 	{// rotate_both(a, b, cheapest node)
 		rotate_both(a, b, cheapest_node);
@@ -79,7 +79,7 @@ void	prepare_and_push_cheapest_a_to_b(t_stack **a, t_stack **b)
 }
 t_stack	*get_cheapest(t_stack *stack)
 {
-	write(1, "get_cheapest\n", 20);
+	//write(1, "get_cheapest\n", 20);
 	if (!stack)
 	{
 		return (NULL);
