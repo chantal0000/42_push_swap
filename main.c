@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:14:50 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/01 18:11:23 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/03 13:22:09 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,13 @@ int	main(int argc, char **argv)
 {
 	int		i;
 	t_stack	*a;
-	t_stack *b;
-	int value;
+	t_stack	*b;
+	int		value;
 
 	a = NULL;
 	b = NULL;
 	i = 0;
 	value = 0;
-
 	if (argc < 2)
 		handle_error();
 	else if (argc == 2)
@@ -38,13 +37,6 @@ int	main(int argc, char **argv)
 		argv = argv + 1;
 	check_if_int(argv);
 	check_for_dup(argv);
-	//check_if_sorted(list);
-	// check max and min int
-	// turn into linked list
-
-		// meaning its not sorted, then we do what?
-		// init stack a
-		// +1 to start from the second element of the command line argument
 	if (check_if_sorted(argv) == 1)
 	{
 		while (argv[i])
@@ -60,9 +52,6 @@ int	main(int argc, char **argv)
 		sort_three(&a);
 	else
 		sort_stacks(&a, &b);
-
-	display(a);
-	display(b);
 	// free_stack
 	return (0);
 }

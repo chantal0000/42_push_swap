@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chbuerge <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:47:42 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/05/11 12:38:08 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/03 14:04:17 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	len = 0;
 	i = 0;
 	if (size > 0)
-	{	
+	{
 		while (src[len] && len < (size -1))
 		{
 			dest[len] = src[len];
@@ -40,7 +40,7 @@ int main()
 
 	size_t size = 5;
 
-	// size = ft_strlcpy(dest, src, sizeof(dest)); 
+	// size = ft_strlcpy(dest, src, sizeof(dest));
 
 	printf("mine: %zu\n", ft_strlcpy(dest, src, size));
 	printf("orig: %zu\n", strlcpy(dest, src, size));
