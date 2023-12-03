@@ -1,0 +1,34 @@
+{
+	"version": "2.0",
+	"tasks": [
+		{
+			"label": "compile",
+			"type": "shell",
+			"command": "cc",
+			"args": [
+				"main.c",
+				"check_input.c",
+				"nodes.c",
+				"operations/push.c",
+				"operations/rotate.c",
+				"operations/rotate_reverse.c",
+				"operations/sort_three.c",
+				"operations/swap.c",
+				"libft/ft_split.c",
+				"libft/ft_atoi.c",
+				"libft/ft_strlen.c",
+				"sorting.c",
+				"a_to_b.c",
+				"-o",
+				"swap.o",
+				"libft/ft_strncmp.c",
+				"prep_b.c",
+				"-g"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

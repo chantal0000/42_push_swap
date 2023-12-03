@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:39:23 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/01 12:33:53 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/03 12:26:59 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ void	prepare_and_push_cheapest_a_to_b(t_stack **a, t_stack **b)
 	// move to top (prep for push( a, cheapest node, a))
 	move_to_top(a, cheapest_node, 'a');
 	// "" b, cheapest_node->targetnode, 'b'
-	move_to_top(b, cheapest_node->target_node, 'b');
+	move_to_top(b, cheapest_node->target_node, 'b'); //in this foo problem
 	// final push
-	pb(a, b);
+	pb(b, a);
 }
 t_stack	*get_cheapest(t_stack *stack)
 {

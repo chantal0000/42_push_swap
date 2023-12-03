@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 09:54:06 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/01 12:43:56 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/03 12:27:14 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,12 @@ void	find_target_node_for_b(t_stack *a, t_stack *b)
 		if (LONG_MAX == best_match_index)
 			b->target_node = smallest_element(a);
 		else
+		{
 			// wir haben match, b target node ist die gefundene target node
 			b->target_node = target_node;
 		// wir suchen target node fuer den nachsten node in b
+		}
+		printf("b: %d\n", b->value);
 		b = b->next;
 	}
 }
@@ -60,4 +63,35 @@ void	set_data_b(t_stack *a, t_stack *b)
 	node_index(a);
 	node_index(b);
 	find_target_node_for_b(a, b);
+}
+
+
+void	move_b_to_a(t_stack **a, t_stack **b)
+{
+	// problem here:
+	prep_for_push(a, (*b)->target_node);
+	pa(a, b);
+}
+
+void	min_on_top(t_stack **a)
+{
+	while((*a)->value != smallest_element(*a)->value)
+	{
+		if(smallest_element(*a)->above_median)
+			ra(a);
+		else
+			rra(a);
+	}
+}
+// CHANGE BABE
+void	prep_for_push(t_stack **stack,
+						t_stack *top_node) //Define a function that moves the required node to the top of the stack
+{
+	while (*stack != top_node) //Check if the required node is not already the first node
+	{
+			if (top_node->above_median)
+				ra(stack);
+			else if (!top_node->above_median)
+				rra(stack);
+	}
 }

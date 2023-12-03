@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:41:51 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/01 12:41:12 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/03 12:35:17 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ void	sort_stacks(t_stack **a, t_stack **b)
 	len_a = stack_len(*a);
 	// if a is > 3 push one element to be
 	if (len_a-- > 3 )
-		pb(a, b);
+		pb(b, a);
 	// else if (if a is still bigger) push another one
 	if (len_a-- > 3 )
-		pb(a, b);
+		pb(b, a);
 	while (len_a-- > 3)
 	{
 		set_data_a(*a, *b);
@@ -43,16 +43,13 @@ void	sort_stacks(t_stack **a, t_stack **b)
 
 	while (*b)
 	{
-		printf("we are in b\n");
 		set_data_b(*a, *b);
-		// code here...
-		display(*b);
-		*b = (*b)->next;
+		move_b_to_a(a, b);
+		printf("display a: ");
+		display(*a);
 	}
-	display(*a);
-	// here you cant see b becuase of *b = (*b)->next;
-	// ...
-	// move smallest to the top of a (final)
+	// move the smallest to the top of a
+	min_on_top(a);
 }
 
 // function to index nodes within a stack and catogarizes them in terms of

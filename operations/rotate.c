@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:44:49 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/01 12:31:02 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/03 12:31:57 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,26 @@
 void	rotate(t_stack **head)
 {
 	t_stack	*final_node;
+
+	 if (!head || !*head || !(*head)->next) {
+        // Stack is empty or has one node, no rotation needed or possible
+        return;
+    }
 	//find the last node in the list
 	final_node = last_node(*head);
 	// the next node after final_node should be the current top one
 	final_node->next = *head;
 	//update top node to be the next node in the list (former second node)
 	*head = (*head)->next;
+	// the new top nodes prev pointer points now to NULL
+	(*head)->prev = NULL;
+
+	/// WAS IT THIS LINE?
+	final_node->next->prev = final_node;
 	// the next node after the original final_node is now the old top node
 	// therefore the next pointer points to NULL
 	final_node->next->next = NULL;
-	// the new top nodes prev pointer points now to NULL
-	(*head)->prev = NULL;
+
 	//printf("final_node: %d\n", final_node->value);
 }
 

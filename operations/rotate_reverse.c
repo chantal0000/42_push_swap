@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:57:55 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/01 12:31:07 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/03 12:16:09 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 void	reverse_rotate(t_stack **head)
 {
 	t_stack	*final_node;
+	if(!*head || !(*head)->next)
+		return;
 	// find the last node in the list
 	final_node = last_node(*head);
 	// next of the second last node = NULL, will be new last

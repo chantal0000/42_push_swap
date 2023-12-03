@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:05:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/01 12:40:04 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/03 12:33:53 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,12 @@ void	set_data_a(t_stack *a, t_stack *b);
 void	prepare_and_push_cheapest_a_to_b(t_stack **a, t_stack **b);
 
 t_stack	*get_cheapest(t_stack *stack);
-
+// b
 void	set_data_b(t_stack *a, t_stack *b);
+void	prep_for_push(t_stack **stack, t_stack *top_node);
+void 	print_stack(t_stack *stack, const char *stack_name);
+void	move_b_to_a(t_stack **a, t_stack **b);
 
-void print_stack(t_stack *stack, const char *stack_name);
+
+void	min_on_top(t_stack **a);
 #endif
