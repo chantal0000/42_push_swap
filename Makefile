@@ -6,7 +6,7 @@
 #    By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 11:14:10 by chbuerge          #+#    #+#              #
-#    Updated: 2023/11/06 11:26:14 by chbuerge         ###   ########.fr        #
+#    Updated: 2023/12/04 09:14:38 by chbuerge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 # defines name of the output library file
 NAME = push_swap.a
 # defines name of the lobrary file of libft project
-LIBFT_NAME = libft.a
+LIBFT_NAME = libft/libft.a
 
 # which c compiler to use -> cc
 CC = cc
@@ -24,26 +24,45 @@ CFLAGS = -Wall -Wextra -Werror
 LIBFT_DIR = ./libft
 
 # list of the source files srequired to build the project
-SRCS = push_swap.c
+SRCS =		a_to_b.c \
+			check_input.c \
+			create_nodes.c \
+			main.c \
+			prep_b.c \
+			sorting.c \
+			utils_nodes.c \
+			operations/push.c \
+			operations/rotate_reverse.c \
+			operations/rotate.c \
+			operations/sort_three.c \
+			operations/swap.c
 
 # defines the object files that will be generated from the cource files
-OBJS = ${SRCS: .c=.o}
+OBJS = ${SRCS:.c=.o}
 
 # BUILD TARGETS
 all: ${NAME}
 
-makelibft:
+$(NAME): $(LIBFT) $(OBJS)
+	cc $(CFLAGS) $(OBJS) $(LIBFT_NAME) -o $(NAME)
+
+%.o: %.c
+	cc $(FLAGS) -c $< -o $@
+
+#makelibft:
 # -C allows you to change directories before running make process
 # enter libft directory and run the make process there
-	@make -C $(LIBFT_DIR)
+#	@make -C $(LIBFT_DIR)
 # cp -> copies 'libft.a' into the current directory '.'
-	@cp $(LIBFT_DIR)/$(LIBFT_NAME) .
+#	@cp $(LIBFT_DIR)/$(LIBFT_NAME) .
 # rename the libft.a to libftprintf.a
-	@mv $(LIBFT_NAME) $(NAME)
+#	@mv $(LIBFT_NAME) $(NAME)
 # compiles the object files into the push_swap static library (ar, archive)
-${NAME}: makelibft ${OBJS}
-	@ar -r ${NAME} ${OBJS}
+#${NAME}: makelibft ${OBJS}
+#	@ar -r ${NAME} ${OBJS}
 
+$(LIBFT_NAME):
+	cd libft && make
 # Remove object files and executables
 clean:
 	@rm -f ${OBJS}
@@ -59,4 +78,4 @@ re:	fclean all
 
 
 
-.PHONY: all clean fclean re libft
+.PHONY: all clean fclean re
