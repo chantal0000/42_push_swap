@@ -6,7 +6,7 @@
 #    By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 11:14:10 by chbuerge          #+#    #+#              #
-#    Updated: 2023/12/04 09:55:51 by chbuerge         ###   ########.fr        #
+#    Updated: 2023/12/04 16:15:00 by chbuerge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ LIBFT_NAME = libft/libft.a
 # which c compiler to use -> cc
 CC = cc
 # which flags to use for warnings and treating warnings
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror -fsanitize=address
 # where to locate libft
 LIBFT_DIR = ./libft
 
@@ -43,11 +43,11 @@ OBJS = ${SRCS:.c=.o}
 # BUILD TARGETS
 all: ${NAME}
 
-$(NAME): $(LIBFT) $(OBJS)
+$(NAME): $(LIBFT_NAME) $(OBJS)
 	cc $(CFLAGS) $(OBJS) $(LIBFT_NAME) -o $(NAME)
 
 %.o: %.c
-	cc $(FLAGS) -c $< -o $@
+	cc $(CFLAGS) -c $< -o $@
 
 #makelibft:
 # -C allows you to change directories before running make process

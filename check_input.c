@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:41:17 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/03 13:15:15 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/04 16:40:14 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	check_if_int(char **arg)
 	while (arg[j])
 	{
 		i = 0;
-		if (arg[j][i] == '-' && arg[j][i + 1]
-			|| arg[j][i] == '+' && arg[j][i + 1])
+		if ((arg[j][i] == '-' && arg[j][i + 1])
+			|| (arg[j][i] == '+' && arg[j][i + 1]))
 			i++;
 		while (arg[j][i])
 		{
@@ -80,6 +80,5 @@ int	check_if_sorted(char **arg)
 		else
 			i++;
 	}
-	handle_error();
 	return (0);
 }
