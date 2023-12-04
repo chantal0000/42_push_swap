@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:14:50 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/03 13:22:09 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/04 09:45:01 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ int	main(int argc, char **argv)
 	else
 		sort_stacks(&a, &b);
 	// free_stack
+	free(a);
 	return (0);
 }
