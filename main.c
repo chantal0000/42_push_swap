@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:14:50 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/04 18:03:30 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/05 15:10:16 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int	main(int argc, char **argv)
 	b = NULL;
 	i = 0;
 	value = 0;
-	if (argc < 2)
-		handle_error();
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
+		return (1);
 	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
 	else
@@ -65,7 +65,9 @@ int	main(int argc, char **argv)
 	{
 		while (argv[i])
 		{
-			value = ft_atoi(argv[i]);
+			value = ft_atolong(argv[i]);
+			if (value < INT_MIN || value > INT_MAX)
+				handle_error();
 			insert_end(&a, value);
 			i++;
 		}

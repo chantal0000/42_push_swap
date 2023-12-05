@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:05:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/04 16:32:58 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/05 15:09:15 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,6 @@ void	move_b_to_a(t_stack **a, t_stack **b);
 void	min_on_top(t_stack **a);
 
 void	free_stack(t_stack **stack);
+
+long	ft_atolong(const char *str);
 #endif
