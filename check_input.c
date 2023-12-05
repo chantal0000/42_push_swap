@@ -6,11 +6,13 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:41:17 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/05 15:07:21 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:42:14 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+
 
 long	ft_atolong(const char *str)
 {
@@ -62,6 +64,13 @@ int	check_if_int(char **arg)
 		}
 		j++;
 	}
+	j = 0;
+	while (arg[j])
+	{
+		if (ft_atolong(arg[j]) < INT_MIN || ft_atolong(arg[j]) > INT_MAX)
+				handle_error();
+		j++;
+	}
 	return (0);
 }
 
@@ -104,7 +113,7 @@ int	check_if_sorted(char **arg)
 	while (arg[i] && arg[i + 1])
 	{
 		len = ft_strlen(arg[i]);
-		if (ft_strncmp(arg[i], arg[i + 1], len) > 0)
+		if (ft_strncmp(arg[i], arg[i + 1], len) < 0)
 			return (1);
 		else
 			i++;

@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:14:50 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/05 15:10:16 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:39:49 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int	handle_error()
 	write(2, "Error\n", 6);
 	exit(1);
 }
-void	free_errors(t_stack **a)
+/*void	free_errors(t_stack **a)
 {
 	free_stack(a);
 	write (2, "Error\n", 6);
 	exit (1);
-}
+}*/
 void	free_stack(t_stack **stack)
 {
 	t_stack	*head;
@@ -66,17 +66,20 @@ int	main(int argc, char **argv)
 		while (argv[i])
 		{
 			value = ft_atolong(argv[i]);
-			if (value < INT_MIN || value > INT_MAX)
-				handle_error();
+			// move to check for dup or int?
+			//if (value < INT_MIN || value > INT_MAX)
+				//handle_error();
+			// check for sorted after int min int max
+
 			insert_end(&a, value);
 			i++;
 		}
 
-	if (stack_len(a) == 2)
-		sa(&a);
-	else if (stack_len(a) == 3)
-		sort_three(&a);
-	else
+		if (stack_len(a) == 2)
+			sa(&a);
+		else if (stack_len(a) == 3)
+			sort_three(&a);
+		else
 		sort_stacks(&a, &b);
 	}
 	if (argc == 2)
