@@ -6,23 +6,18 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:14:50 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/05 17:39:49 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:29:42 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	handle_error()
+int	handle_error(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
 }
-/*void	free_errors(t_stack **a)
-{
-	free_stack(a);
-	write (2, "Error\n", 6);
-	exit (1);
-}*/
+
 void	free_stack(t_stack **stack)
 {
 	t_stack	*head;
@@ -34,20 +29,27 @@ void	free_stack(t_stack **stack)
 	while (head)
 	{
 		tmp = head->next;
-		// not nec
 		head->value = 0;
 		free(head);
 		head = tmp;
 	}
 	*stack = NULL;
 }
-
+void	sort_stacks_based_on_len(t_stack **a, t_stack **b)
+{
+	if (stack_len(*a) == 2)
+		sa(&a);
+	else if (stack_len(*a) == 3)
+		sort_three(&a);
+	else
+		sort_stacks(&a, &b);
+}
 int	main(int argc, char **argv)
 {
 	int		i;
 	t_stack	*a;
 	t_stack	*b;
-	long		value;
+	long	value;
 
 	a = NULL;
 	b = NULL;
@@ -66,25 +68,19 @@ int	main(int argc, char **argv)
 		while (argv[i])
 		{
 			value = ft_atolong(argv[i]);
-			// move to check for dup or int?
-			//if (value < INT_MIN || value > INT_MAX)
-				//handle_error();
-			// check for sorted after int min int max
-
 			insert_end(&a, value);
 			i++;
 		}
-
 		if (stack_len(a) == 2)
 			sa(&a);
 		else if (stack_len(a) == 3)
 			sort_three(&a);
 		else
-		sort_stacks(&a, &b);
+			sort_stacks(&a, &b);
 	}
 	if (argc == 2)
 	{
-	i = 0;
+		i = 0;
 		while (argv[i])
 		{
 			free(argv[i]);
