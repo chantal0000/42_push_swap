@@ -6,19 +6,17 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:41:17 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/05 17:42:14 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/05 19:49:39 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
 long	ft_atolong(const char *str)
 {
-	int	i;
+	int		i;
 	long	result;
-	int	sign;
+	int		sign;
 
 	i = 0;
 	result = 0;
@@ -42,7 +40,6 @@ long	ft_atolong(const char *str)
 	return (result);
 }
 
-
 //check if all argument values are integer
 int	check_if_int(char **arg)
 {
@@ -62,13 +59,8 @@ int	check_if_int(char **arg)
 				handle_error();
 			i++;
 		}
-		j++;
-	}
-	j = 0;
-	while (arg[j])
-	{
 		if (ft_atolong(arg[j]) < INT_MIN || ft_atolong(arg[j]) > INT_MAX)
-				handle_error();
+			handle_error();
 		j++;
 	}
 	return (0);
@@ -117,6 +109,21 @@ int	check_if_sorted(char **arg)
 			return (1);
 		else
 			i++;
+	}
+	return (0);
+}
+
+// check if sorted of a linked list
+
+int	check_if_sorted_list(t_stack *stack)
+{
+	if (!stack)
+		return (1);
+	while (stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (2);
+		stack = stack->next;
 	}
 	return (0);
 }

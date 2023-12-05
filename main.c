@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:14:50 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/05 18:29:42 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/05 19:54:58 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,7 @@ void	free_stack(t_stack **stack)
 	}
 	*stack = NULL;
 }
-void	sort_stacks_based_on_len(t_stack **a, t_stack **b)
-{
-	if (stack_len(*a) == 2)
-		sa(&a);
-	else if (stack_len(*a) == 3)
-		sort_three(&a);
-	else
-		sort_stacks(&a, &b);
-}
+
 int	main(int argc, char **argv)
 {
 	int		i;
@@ -63,14 +55,14 @@ int	main(int argc, char **argv)
 		argv = argv + 1;
 	check_if_int(argv);
 	check_for_dup(argv);
-	if (check_if_sorted(argv) == 1)
-	{
 		while (argv[i])
 		{
 			value = ft_atolong(argv[i]);
 			insert_end(&a, value);
 			i++;
 		}
+	if (check_if_sorted_list(a) == 2)
+	{
 		if (stack_len(a) == 2)
 			sa(&a);
 		else if (stack_len(a) == 3)
@@ -78,6 +70,7 @@ int	main(int argc, char **argv)
 		else
 			sort_stacks(&a, &b);
 	}
+
 	if (argc == 2)
 	{
 		i = 0;

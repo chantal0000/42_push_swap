@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:05:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/05 15:09:15 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/05 19:49:15 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_stack
 
 }	t_stack;
 
-int		handle_error();
+int		handle_error(void);
 // CHECK_INPUT
 int		check_if_int(char **arg);
 int		check_for_dup(char **arg);
@@ -106,4 +106,9 @@ void	min_on_top(t_stack **a);
 void	free_stack(t_stack **stack);
 
 long	ft_atolong(const char *str);
+
+void	sort_stacks_based_on_len(t_stack **a, t_stack **b);
+t_stack	*create_stack(t_stack *a, char **argv);
+
+int	check_if_sorted_list(t_stack *stack);
 #endif

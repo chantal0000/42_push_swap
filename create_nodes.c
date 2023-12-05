@@ -6,14 +6,14 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:55:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/05 18:28:29 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:38:28 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // turn the arguments into ints and create the linked list
-
+/*
 t_stack *create_stack(t_stack *a, char **argv)
 {
 	int	i;
@@ -27,10 +27,7 @@ t_stack *create_stack(t_stack *a, char **argv)
 			i++;
 		}
 		return (a);
-}
-
-
-
+}*/
 // creating a new node
 t_stack	*create_node(int value)
 {
