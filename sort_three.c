@@ -6,11 +6,11 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 11:07:01 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/03 14:12:35 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/06 10:31:29 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "./push_swap.h"
 
 //ra rotate a so the first element goes to the bottom
 // if the second node is the biggest
