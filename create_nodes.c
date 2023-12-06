@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:55:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/06 10:12:12 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:31:56 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ t_stack	*create_node(int value)
 	new_node->value = value;
 	new_node->prev = NULL;
 	new_node->next = NULL;
+	new_node->target_node = NULL;
+	new_node->operations_cost = 0;
+	new_node->above_median = false;
+	new_node->cheapest = false;
 	return (new_node);
 }
 

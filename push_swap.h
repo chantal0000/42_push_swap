@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:05:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/06 10:28:14 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:30:21 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,24 +33,24 @@ typedef struct s_stack
 {
 	int				value;
 	int				i;
-	struct s_stack	*target_node;
 	struct s_stack	*next;
 	struct s_stack	*prev;
+	struct s_stack	*target_node;
 	int				operations_cost;
 	bool			above_median;
 	bool			cheapest;
 
 }	t_stack;
 
-int		handle_error(void);
+int		handle_error(int count_input, char **input);
 // CHECK INPUT
-void	check_input(char **argv);
-int		check_if_int(char **arg);
-int		check_for_dup(char **arg);
+void	check_input(int count_input, char **input);
+int		check_if_int(int count_input, char **input);
+int		check_for_dup(int count_input, char **input);
 int		check_if_sorted_list(t_stack *stack);
 
 // INIT STACK
-void	init_stack(t_stack **a, char **argv);
+void	init_stack(t_stack **a, int count_input, char **input);
 long	ft_atolong(const char *str);
 
 // CREATE NODES

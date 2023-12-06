@@ -6,7 +6,7 @@
 #    By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 11:14:10 by chbuerge          #+#    #+#              #
-#    Updated: 2023/12/06 10:16:42 by chbuerge         ###   ########.fr        #
+#    Updated: 2023/12/06 16:47:10 by chbuerge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ LIBFT_NAME = libft/libft.a
 # which c compiler to use -> cc
 CC = cc
 # which flags to use for warnings and treating warnings
-CFLAGS = -g -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -g -Wall -Wextra -Werror #-fsanitize=address
 # where to locate libft
 LIBFT_DIR = ./libft
 
@@ -51,18 +51,6 @@ $(NAME): $(LIBFT_NAME) $(OBJS)
 
 %.o: %.c
 	cc $(CFLAGS) -c $< -o $@
-
-#makelibft:
-# -C allows you to change directories before running make process
-# enter libft directory and run the make process there
-#	@make -C $(LIBFT_DIR)
-# cp -> copies 'libft.a' into the current directory '.'
-#	@cp $(LIBFT_DIR)/$(LIBFT_NAME) .
-# rename the libft.a to libftprintf.a
-#	@mv $(LIBFT_NAME) $(NAME)
-# compiles the object files into the push_swap static library (ar, archive)
-#${NAME}: makelibft ${OBJS}
-#	@ar -r ${NAME} ${OBJS}
 
 $(LIBFT_NAME):
 	cd libft && make

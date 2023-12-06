@@ -6,22 +6,22 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 09:10:26 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/06 09:51:10 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:24:05 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_stack(t_stack **a, char **argv)
+void	init_stack(t_stack **a, int count_input, char **input)
 {
 	long	value;
 	int		i;
 
 	i = 0;
-	check_input(argv);
-	while (argv[i])
+	check_input(count_input, input);
+	while (input[i])
 	{
-		value = ft_atolong(argv[i]);
+		value = ft_atolong(input[i]);
 		insert_end(a, value);
 		i++;
 	}

@@ -6,12 +6,9 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 14:55:56 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/06/02 15:28:20 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:38:58 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-character ’c’ as a delimiter. The array must end
-with a NULL pointer.*/
 
 #include "libft.h"
 

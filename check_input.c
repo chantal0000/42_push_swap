@@ -6,45 +6,70 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:41:17 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/06 10:14:25 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:36:56 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_input(char **argv)
+void	check_input(int count_input, char **input)
 {
-	check_if_int(argv);
-	check_for_dup(argv);
+	check_if_int(count_input, input);
+	check_for_dup(count_input, input);
 }
 
 //check if all argument values are integer
-int	check_if_int(char **arg)
+int	check_if_int(int count_input, char **input)
 {
 	int	i;
 	int	j;
 
 	j = 0;
-	while (arg[j])
+	while (input[j])
 	{
 		i = 0;
-		if ((arg[j][i] == '-' && arg[j][i + 1])
-			|| (arg[j][i] == '+' && arg[j][i + 1]))
+		if ((input[j][i] == '-' && input[j][i + 1])
+			|| (input[j][i] == '+' && input[j][i + 1]))
 			i++;
-		while (arg[j][i])
+		while (input[j][i])
 		{
-			if (arg[j][i] < '0' || arg[j][i] > '9')
-				handle_error();
+			if (input[j][i] < '0' || input[j][i] > '9')
+				handle_error(count_input, input);
 			i++;
 		}
-		if (ft_atolong(arg[j]) < INT_MIN || ft_atolong(arg[j]) > INT_MAX)
-			handle_error();
+		if (ft_atolong(input[j]) < INT_MIN || ft_atolong(input[j]) > INT_MAX)
+			handle_error(count_input, input);
 		j++;
 	}
 	return (0);
 }
 
 //check for duplicates within the argument values
+int	check_for_dup(int count_input, char **input)
+{
+	int		i;
+	int		j;
+	long	num1;
+	long	num2;
+
+	i = 0;
+	while (input[i])
+	{
+		j = i + 1;
+		while (input[j])
+		{
+			num1 = ft_atolong(input[i]);
+			num2 = ft_atolong(input[j]);
+			if (num1 == num2)
+				handle_error (count_input, input);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+/*
 int	check_for_dup(char **arg)
 {
 	int	i;
@@ -70,7 +95,7 @@ int	check_for_dup(char **arg)
 		i++;
 	}
 	return (0);
-}
+}*/
 
 // check if sorted of a linked list
 int	check_if_sorted_list(t_stack *stack)

@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 09:47:46 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/06 09:48:24 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:34:58 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 // function to index nodes within a stack and catogarizes them in terms of
 // above or below median
 // median is the length of the stack / 2
-// ++i
 void	node_index(t_stack *stack)
 {
 	int	i;
@@ -98,10 +97,10 @@ void	operation_cost(t_stack *a, t_stack *b)
 	}
 }
 
-		//if bs operation costs are lower than best_match value
-		// update best match value to bs costs
-		// FOUND NEW cheapest, set it to best_match
-			// set cheapest of the best_match_node to true
+//if bs operation costs are lower than best_match value
+// update best match value to bs costs
+// FOUND NEW cheapest, set it to best_match
+// set cheapest of the best_match_node to true
 void	find_cheapest(t_stack *stack)
 {
 	long	best_match_value;
