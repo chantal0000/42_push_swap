@@ -6,7 +6,7 @@
 #    By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 11:14:10 by chbuerge          #+#    #+#              #
-#    Updated: 2023/12/06 16:47:10 by chbuerge         ###   ########.fr        #
+#    Updated: 2023/12/06 18:55:53 by chbuerge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ LIBFT_NAME = libft/libft.a
 # which c compiler to use -> cc
 CC = cc
 # which flags to use for warnings and treating warnings
-CFLAGS = -g -Wall -Wextra -Werror #-fsanitize=address
+CFLAGS = -g -Wall -Wextra -Werror
+#-fsanitize=address
 # where to locate libft
 LIBFT_DIR = ./libft
 
