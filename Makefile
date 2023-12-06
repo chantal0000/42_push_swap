@@ -6,7 +6,7 @@
 #    By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 11:14:10 by chbuerge          #+#    #+#              #
-#    Updated: 2023/12/06 09:54:25 by chbuerge         ###   ########.fr        #
+#    Updated: 2023/12/06 10:16:42 by chbuerge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ SRCS =		a_to_b.c \
 			operations/push.c \
 			operations/rotate_reverse.c \
 			operations/rotate.c \
-			operations/sort_three.c \
+			sort_three.c \
 			operations/swap.c \
 			init_stack.c \
 			find_node_to_push.c \

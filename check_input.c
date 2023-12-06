@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:41:17 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/06 09:42:48 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/06 10:14:25 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,27 +72,7 @@ int	check_for_dup(char **arg)
 	return (0);
 }
 
-//check if already sorted
-// if == 1 it is not sorted
-int	check_if_sorted(char **arg)
-{
-	int	i;
-	int	len;
-
-	i = 0;
-	while (arg[i] && arg[i + 1])
-	{
-		len = ft_strlen(arg[i]);
-		if (ft_strncmp(arg[i], arg[i + 1], len) < 0)
-			return (1);
-		else
-			i++;
-	}
-	return (0);
-}
-
 // check if sorted of a linked list
-
 int	check_if_sorted_list(t_stack *stack)
 {
 	if (!stack)
