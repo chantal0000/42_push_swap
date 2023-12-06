@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:41:17 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/05 19:49:39 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/06 09:17:42 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,12 @@ long	ft_atolong(const char *str)
 		return (result * sign);
 	}
 	return (result);
+}
+
+void	check_input(char **argv)
+{
+	check_if_int(argv);
+	check_for_dup(argv);
 }
 
 //check if all argument values are integer

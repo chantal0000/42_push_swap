@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:14:50 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/05 19:54:58 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/06 09:32:52 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,36 +41,19 @@ int	main(int argc, char **argv)
 	int		i;
 	t_stack	*a;
 	t_stack	*b;
-	long	value;
 
 	a = NULL;
 	b = NULL;
 	i = 0;
-	value = 0;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
 	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
 	else
 		argv = argv + 1;
-	check_if_int(argv);
-	check_for_dup(argv);
-		while (argv[i])
-		{
-			value = ft_atolong(argv[i]);
-			insert_end(&a, value);
-			i++;
-		}
+	init_stack(&a, argv);
 	if (check_if_sorted_list(a) == 2)
-	{
-		if (stack_len(a) == 2)
-			sa(&a);
-		else if (stack_len(a) == 3)
-			sort_three(&a);
-		else
-			sort_stacks(&a, &b);
-	}
-
+		start_sort(&a, &b);
 	if (argc == 2)
 	{
 		i = 0;

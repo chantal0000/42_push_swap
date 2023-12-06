@@ -6,7 +6,7 @@
 #    By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 11:14:10 by chbuerge          #+#    #+#              #
-#    Updated: 2023/12/05 15:09:44 by chbuerge         ###   ########.fr        #
+#    Updated: 2023/12/06 09:16:59 by chbuerge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ SRCS =		a_to_b.c \
 			operations/rotate_reverse.c \
 			operations/rotate.c \
 			operations/sort_three.c \
-			operations/swap.c
+			operations/swap.c \
+			init_stack.c
 
 # defines the object files that will be generated from the cource files
 OBJS = ${SRCS:.c=.o}

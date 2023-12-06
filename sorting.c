@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:41:51 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/03 13:58:52 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/06 09:30:00 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,21 @@
 // 5. last step bring min number to the top of the stack a,
 	// check if everything is sorted
 // len_a-- post decrementation, checks first then decrements
+
+void	start_sort(t_stack	**a, t_stack **b)
+{
+	int	len;
+
+	len = stack_len(*a);
+	if (len == 2)
+		sa(a);
+	else if (len == 3)
+		sort_three(a);
+	else
+		sort_stacks(a, b);
+}
+
+
 void	sort_stacks(t_stack **a, t_stack **b)
 {
 	int	len_a;
