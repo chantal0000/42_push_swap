@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:05:03 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/06 09:37:41 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/06 09:53:49 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,5 +116,7 @@ void	init_stack(t_stack **a, char **argv);
 void	check_input(char **argv);
 void	start_sort(t_stack	**a, t_stack **b);
 void	free_array(char **argv);
+
+void	find_target_node_for_a(t_stack *a, t_stack *b);
 
 #endif

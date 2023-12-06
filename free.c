@@ -6,7 +6,7 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 09:39:24 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/06 09:39:58 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/06 09:50:27 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ void	free_array(char **argv)
 
 	i = 0;
 	while (argv[i])
-		{
-			free(argv[i]);
-			i++;
-		}
-		free(argv);
+	{
+		free(argv[i]);
+		i++;
+	}
+	free(argv);
 }
 
 void	free_stack(t_stack **stack)

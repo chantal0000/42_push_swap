@@ -6,39 +6,11 @@
 /*   By: chbuerge <chbuerge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:41:17 by chbuerge          #+#    #+#             */
-/*   Updated: 2023/12/06 09:17:42 by chbuerge         ###   ########.fr       */
+/*   Updated: 2023/12/06 09:42:48 by chbuerge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-long	ft_atolong(const char *str)
-{
-	int		i;
-	long	result;
-	int		sign;
-
-	i = 0;
-	result = 0;
-	sign = 0;
-	while ((str[i] == ' ') || (str[i] == '\t') || str[i] == '\n'
-		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
-		i++;
-	if (str[i] == '-')
-		sign = -1;
-	if ((str[i] == '-') || (str[i] == '+'))
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + str[i] - 48;
-		i++;
-	}
-	if (sign == -1)
-	{
-		return (result * sign);
-	}
-	return (result);
-}
 
 void	check_input(char **argv)
 {
